@@ -145,3 +145,39 @@ test('Should be an error message if passwords not match and initialy not error m
 
   expect(confirmPasswordErrorElementAgain).toBeInTheDocument()
 })
+
+test('Should not be an error message if all is ok', () => {
+  render(<App />)
+
+  const emailInputElement = screen.getByRole('textbox', {
+    name: /email/i, //chek in labelText
+  })
+
+  const passwordInputElement = screen.getByLabelText('Password')
+
+  const confirmpasswordInputElement = screen.getByLabelText('Confirm password')
+
+  const submitBtnElement = screen.getByRole('button', {
+    name: 'Submit',
+  })
+
+  userEvent.type(emailInputElement, 'test@test.com')
+  userEvent.type(passwordInputElement, '12345')
+  userEvent.type(confirmpasswordInputElement, '12345')
+
+  userEvent.click(submitBtnElement)
+
+  const confirmPasswordErrorElement = screen.queryByText(
+    'The password don t match.Try again.',
+  )
+  const passwordErrorElement = screen.queryByText(
+    /the password you entered should contain 5 or more character/i,
+  )
+  const emailErrorElement = screen.queryByText(
+    /the email you input is invalid/i,
+  )
+
+  expect(confirmPasswordErrorElement).not.toBeInTheDocument()
+  expect(passwordErrorElement).not.toBeInTheDocument()
+  expect(emailErrorElement).not.toBeInTheDocument()
+})
