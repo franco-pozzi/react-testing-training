@@ -1,9 +1,9 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import App from './App'
+import { FormTest } from './index'
 
 // test('render H1 error text', () => {
-//   render(<App />)
+//   render(<FormTest />)
 //   const h1Element = screen.getByText(/Error/i)
 //   expect(h1Element).toBeInTheDocument()
 // })
@@ -11,7 +11,7 @@ import App from './App'
 test('All the input elements should be initialized empty', () => {
   // <= description of test
   //Logic
-  render(<App />)
+  render(<FormTest />)
 
   const emailInputElement = screen.getByRole('textbox')
 
@@ -27,7 +27,7 @@ test('All the input elements should be initialized empty', () => {
 })
 
 test('Should be able to type in email field', () => {
-  render(<App />)
+  render(<FormTest />)
 
   const emailInputElement = screen.getByRole('textbox', {
     name: /email/i, //chek in labelText
@@ -39,7 +39,7 @@ test('Should be able to type in email field', () => {
 })
 
 test('Should be able to type in password field', () => {
-  render(<App />)
+  render(<FormTest />)
 
   const passwordInputElement = screen.getByLabelText('Password')
 
@@ -49,7 +49,7 @@ test('Should be able to type in password field', () => {
 })
 
 test('Should be able to type in confirm password field', () => {
-  render(<App />)
+  render(<FormTest />)
 
   const confirmPasswordInputElement = screen.getByLabelText('Confirm password')
 
@@ -59,7 +59,7 @@ test('Should be able to type in confirm password field', () => {
 })
 
 test('Should be an error message on invalid email and initialy not error message', () => {
-  render(<App />)
+  render(<FormTest />)
 
   const emailErrorElement = screen.queryByText(
     /the email you input is invalid/i,
@@ -84,7 +84,7 @@ test('Should be an error message on invalid email and initialy not error message
 })
 
 test('Should be an error message on invalid password and initialy not error message', () => {
-  render(<App />)
+  render(<FormTest />)
 
   const passwordErrorElement = screen.queryByText(
     /the password you entered should contain 5 or more character/i,
@@ -113,7 +113,7 @@ test('Should be an error message on invalid password and initialy not error mess
 })
 
 test('Should be an error message if passwords not match and initialy not error message', () => {
-  render(<App />)
+  render(<FormTest />)
 
   const confirmPasswordErrorElement = screen.queryByText(
     /the password don t match try again/i,
@@ -147,7 +147,7 @@ test('Should be an error message if passwords not match and initialy not error m
 })
 
 test('Should not be an error message if all is ok', () => {
-  render(<App />)
+  render(<FormTest />)
 
   const emailInputElement = screen.getByRole('textbox', {
     name: /email/i, //chek in labelText

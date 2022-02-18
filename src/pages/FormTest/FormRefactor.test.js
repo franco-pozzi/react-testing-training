@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import App from './App'
+import { FormTest } from './index'
 
-const setup = () => render(<App />)
+const setup = () => render(<FormTest />)
 
 // // beforeEach(()=>{
 // // for initialize, this run before each test
