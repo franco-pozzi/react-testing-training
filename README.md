@@ -13,4 +13,20 @@ src/FormTest
 - Should be an error message if passwords not match and initialy not error message.
 - Should not be an error message if all is ok.
 
-### Components
+### Components whit props
+
+src/components/Card
+
+- Should show name of cat
+- Should show phone number
+- Should show email
+- Should show image with correct src
+- Should show image outlined heart
+- Should show image filled heart
+- Should toggle heart status
+
+### Multiple Elements
+
+src/components/Cards
+
+- Should render five card components
