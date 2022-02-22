@@ -1,10 +1,11 @@
-import { Cards } from './components/Cards/Cards'
-import cats from './moks/cats.json'
+import React from 'react'
+
+import { Pets } from './components/Pets/Pets'
 
 function App() {
   return (
     <>
-      <Cards cats={cats} />
+      <Pets />
     </>
   )
 }
