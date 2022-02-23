@@ -30,3 +30,18 @@ src/components/Card
 src/components/Cards
 
 - Should render five card components
+
+### Handling and Mocking HTTP requests
+
+src/components/Pets
+
+- Should render the correct amount of cards
+
+### Integration Test
+
+src/components/Pets
+
+- Should filter for male cats
+- Should filter for female cats
+- Should filter for favoured cats
+- Should filter for not favoured cats

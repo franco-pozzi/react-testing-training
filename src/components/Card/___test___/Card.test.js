@@ -14,7 +14,14 @@ const cardProps = {
 }
 
 const renderCardWhitProps = (testProps) =>
-  render(<Card {...cardProps} {...testProps} />)
+  render(
+    <Card
+      {...cardProps}
+      {...testProps}
+      updateFavourite={() => {}}
+      index={{}}
+    />,
+  )
 
 describe('Card', () => {
   test('Should show name of cat', () => {

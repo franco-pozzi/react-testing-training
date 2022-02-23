@@ -5,7 +5,7 @@ import cats from '../../../moks/cats.json'
 
 describe('Cards', () => {
   test('should render five card components', () => {
-    render(<Cards cats={cats} />)
+    render(<Cards filterCats={cats} />)
 
     expect(screen.getAllByRole('article').length).toBe(5)
   })

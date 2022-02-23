@@ -2,7 +2,7 @@ import { screen, render } from '@testing-library/react'
 import { Filter } from '../Filter'
 import userEvent from '@testing-library/user-event'
 
-const setup = () => render(<Filter />)
+const setup = () => render(<Filter setFilters={() => {}} filters={{}} />)
 
 describe('Filter', () => {
   test('should be able to change value of favourite select', () => {
